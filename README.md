@@ -13,10 +13,13 @@ Remarks:
   - The --partitionkey and --partitionvalue options are required when the mode is PARTIIONED.
   - The default format is parquet
   - The --extraoptions option is useful to pass sqoop commands.
-    Example: --extraoptions "--map-column-java column1=String,column2=Long --where \"id<123456\" "
+    Example: --extraoptions "--map-column-java column1=String,column2=Long --where \"id<1234567\" "
 Examples:
-sh sqoop-import.sh --env cerner --sourcetable table1
-sh sqoop-import.sh --env dwhiae --sourcetable tableabc --hivetable tableabc1
-sh sqoop-import.sh --env cerner --sourcetable tableabc --splitby column1 --extraoptions "--map-column-java column1=String,column2=Long"
-sh sqoop-import.sh --env cerner --mode PARTITIONED --sourcetable table1 --partitionkey dataingestion --partitionvalue 2019-06-07
+sh sqoop-import.sh --env source-test --sourcetable table1
+sh sqoop-import.sh --env source-test2 --sourcetable tableabc --hivetable tableabc1
+sh sqoop-import.sh --env source-test --sourcetable tableabc --splitby column1 --extraoptions "--map-column-java column1=String,column2=Long"
+sh sqoop-import.sh --env source-test --mode PARTITIONED --sourcetable table1 --partitionkey dataingestion --partitionvalue 2019-02-27
 ```
+
+* *Hint*:
+The `extraoptions` parameter is useful to inject whatever Sqoop parameter.
