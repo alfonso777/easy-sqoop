@@ -23,3 +23,6 @@ sh sqoop-import.sh --env source-test --mode PARTITIONED --sourcetable table1 --p
 
 * *Hint*:
 The `extraoptions` parameter is useful to inject whatever Sqoop parameter.
+
+### Next steps
+* Allow the `form query` way in order to enable more customized ingestions.
